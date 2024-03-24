@@ -1,0 +1,19 @@
+function [res] = lllcontrol(v)
+%LLLCONTROL 基础lll格基约减过程
+n=size(v);
+n=n(1);
+
+k=2;
+while k<=n
+    V=orthogonal(v(1:k,:));
+    for j=1:k-1
+        u=dot(v(k,:),V(j,:))/(norm(V(j,:))^2);
+        v(k,:)-v(k,:)-round(u)*v(j,:);
+    end
+    %% 
+    u=dot(v(k,:),V(k-1,:))/(norm)
+
+end
+
+end
+
